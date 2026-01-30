@@ -1,10 +1,12 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="zh" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="hello">
       
       
       
@@ -16,16 +18,19 @@
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="img/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Ecoli-Two</title>
+        <title>Ecoli</title>
       
     
     
       <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,7 +58,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -62,8 +72,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-ecoli-mkdocs" class="md-skip">
-          Skip to content
+        <a href="#welcome-to-the-website-by-ecoli" class="md-skip">
+          跳转至
         </a>
       
     </div>
@@ -77,11 +87,10 @@
   
 
 <header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Ecoli-Two" class="md-header__button md-logo" aria-label="Ecoli-Two" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="." title="Ecoli" class="md-header__button md-logo" aria-label="Ecoli" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="img/favicon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -92,21 +101,21 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Ecoli-Two
+            Ecoli
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome to Ecoli MkDocs
+              Welcome to the website by Ecoli.
             
           </span>
         </div>
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -120,16 +129,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="查找">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -140,7 +149,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            正在初始化搜索引擎
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -150,6 +159,18 @@
 </div>
       
     
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Noregrets42619/Noregrets42619.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
     
   </nav>
   
@@ -174,16 +195,27 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Ecoli-Two" class="md-nav__button md-logo" aria-label="Ecoli-Two" data-md-component="logo">
+    <a href="." title="Ecoli" class="md-nav__button md-logo" aria-label="Ecoli" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="img/favicon.png" alt="logo">
 
     </a>
-    Ecoli-Two
+    Ecoli
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Noregrets42619/Noregrets42619.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -210,7 +242,7 @@
   <span class="md-ellipsis">
     
   
-    Welcome to Ecoli MkDocs
+    Welcome to the website by Ecoli.
   
 
     
@@ -228,7 +260,7 @@
   <span class="md-ellipsis">
     
   
-    Welcome to Ecoli MkDocs
+    Welcome to the website by Ecoli.
   
 
     
@@ -240,7 +272,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
   
@@ -249,65 +281,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#common-commands" class="md-nav__link">
+  <a href="#indexmd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Commands
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Commands">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mkdocs-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MkDocs Commands
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Git Commands
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Project layout
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mkdocs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MkDocs
+        🚀 首页介绍 (index.md)
       
     </span>
   </a>
@@ -336,7 +318,7 @@
   <span class="md-ellipsis">
     
   
-    Welcome to the website built by Ecoli.
+    Common Commands
   
 
     
@@ -362,7 +344,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
   
@@ -371,65 +353,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#common-commands" class="md-nav__link">
+  <a href="#indexmd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Commands
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Commands">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mkdocs-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MkDocs Commands
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Git Commands
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Project layout
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mkdocs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MkDocs
+        🚀 首页介绍 (index.md)
       
     </span>
   </a>
@@ -452,30 +384,32 @@
                   
 
 
+  
+  
 
-<h1 id="welcome-to-ecoli-mkdocs">Welcome to Ecoli MkDocs</h1>
+
+<h1 id="welcome-to-the-website-by-ecoli">Welcome to the website by Ecoli.</h1>
 <p>This is a website from Ecoli, which is deployed on Github Pages.</p>
-<h2 id="common-commands">Common Commands</h2>
-<h3 id="mkdocs-commands">MkDocs Commands</h3>
+<h2 id="indexmd">🚀 首页介绍 (index.md)</h2>
+<h1 id="imx-rt1064">欢迎来到 i.MX RT1064 开发实战手册</h1>
+<p>这里是我在嵌入式海洋中“打怪升级”的航海日志。本站专注于 <strong>NXP i.MX RT1064</strong> 芯片的实战开发，记录了从底层外设驱动到上层开发工具的使用心得。</p>
+<h3 id="_1">📌 为什么建立这个站点？</h3>
+<p>在嵌入式开发中，我们常说“代码是最好的文档”，但当面对 RT1064 这样主频高达  的 Cortex-M7 怪兽时，凌乱的 API 往往会让人头大。</p>
 <ul>
-<li><code>mkdocs new [Ecoli]</code> - 新建一个名字为Ecoli的页面</li>
-<li><code>mkdocs serve</code> - 开启自带服务器实时预览【bug】.</li>
-<li><code>mkdocs build</code> - 构建网页端.</li>
-<li><code>mkdocs -h</code> - 打印帮助文档.</li>
+<li><strong>标准化：</strong> 借助 <strong>MCUXpresso Config Tools</strong> 实现图形化配置，让底层初始化不再是体力活。</li>
+<li><strong>沉淀：</strong> 记录 UART、I2C、SPI 等外设的函数封装逻辑，避免“重复造轮子”。</li>
+<li><strong>跨界：</strong> 分享 MkDocs 文档构建、Git 版本管理等效率工具，从“代码搬运工”向“全栈工程师”进发。</li>
 </ul>
-<h3 id="git-commands">Git Commands</h3>
-<ul>
-<li><code>git init</code>  - 初始化git.</li>
-<li><code>git add .</code> - 将所有文件提交缓冲区.</li>
-<li><code>git commit -m "example"</code> -  编写提交备注.</li>
-<li><code>git push origin main</code> - 将文件提交至仓库main分支.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre>
+<h3 id="_2">🛠 内容版块</h3>
+<ol>
+<li><strong>外设深度解析</strong>：不仅仅是 API 的搬运，更有初始化流程、中断处理及避坑指南。</li>
+<li><strong>配置工具链</strong>：如何优雅地使用 MCUXpresso 系列工具，实现“一键生成”与“手动微调”的完美平衡。</li>
+<li><strong>开发哲学</strong>：记录 Git 流管理、Markdown 高级技巧，以及我是如何折腾出这个 MkDocs 站点的。</li>
+</ol>
+<blockquote>
+<p>“<u>纸上得来终觉浅，绝知此事要躬行。</u>” 希望这些文字能成为你（或未来的我）在 RT1064 开发路上的小小路标。</p>
+</blockquote>
+<hr />
 <h2 id="mkdocs">MkDocs</h2>
 <p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
 
@@ -506,6 +440,10 @@ docs/
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Noregrets
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -527,7 +465,7 @@ docs/
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
