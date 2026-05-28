@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="ESP32_Host_MIDI piano firmware porting notes for WT99P4C5-S1.">
+        <meta name="description" content="WT99P4C5-S1 ESP32_Host_MIDI piano porting log.">
       
       
       
-        <link rel="canonical" href="https://noregrets42619.github.io/test/">
+        <link rel="canonical" href="https://noregrets42619.github.io/audio-network-ble/">
       
       
-        <link rel="prev" href="../configuration/">
+        <link rel="prev" href="../usb-display/">
       
       
-        <link rel="next" href="../test1/">
+        <link rel="next" href="../issues-and-fixes/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>移植日志 - Ecoli</title>
+        <title>音频、WiFi 与 BLE - Ecoli</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wt99p4c5-midi-piano" class="md-skip">
+        <a href="#wifi-ble" class="md-skip">
           跳转至
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              移植日志
+              音频、WiFi 与 BLE
             
           </span>
         </div>
@@ -287,14 +287,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../replication/" class="md-nav__link">
+      <a href="../project-setup/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    复刻步骤
+    工程准备与接入
   
 
     
@@ -314,14 +314,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../configuration/" class="md-nav__link">
+      <a href="../usb-display/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    配置与依赖
+    USB MIDI 与 SPI 显示
   
 
     
@@ -357,7 +357,7 @@
   <span class="md-ellipsis">
     
   
-    移植日志
+    音频、WiFi 与 BLE
   
 
     
@@ -375,7 +375,7 @@
   <span class="md-ellipsis">
     
   
-    移植日志
+    音频、WiFi 与 BLE
   
 
     
@@ -403,10 +403,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#es8311" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ES8311 音频接入
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        项目背景
+        声音小和音量处理
       
     </span>
   </a>
@@ -414,10 +425,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#wifi-applemidi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 重新定位工程
+        WiFi 和 AppleMIDI 接入
       
     </span>
   </a>
@@ -425,10 +436,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-esp32_host_midi" class="md-nav__link">
+  <a href="#hosted-wifi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 接入 ESP32_Host_MIDI
+        Hosted WiFi 内存问题
       
     </span>
   </a>
@@ -436,10 +447,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#wifi-ble_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. 清理旧依赖
+        WiFi 与 BLE 功能开关
       
     </span>
   </a>
@@ -447,10 +458,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-usb-midi" class="md-nav__link">
+  <a href="#p4-c5-hosted-ble" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 建立最小 USB MIDI 验证入口
+        P4 + C5 Hosted BLE 开启
       
     </span>
   </a>
@@ -458,98 +469,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-usb-midi" class="md-nav__link">
+  <a href="#ble-midi-peripheral" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. 处理 USB MIDI 重复事件
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-piano" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. 移植 piano 显示层
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-es8311" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. 接入 ES8311 音频
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-wifi-hosted-applemidi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. 接入 WiFi Hosted 和 AppleMIDI
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-dma" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. 分析 DMA 与运行日志
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-hosted-ble" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. 配置 Hosted BLE
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-ble-midi-peripheral" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        11. 接入 BLE MIDI peripheral
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#12-wifi-ble" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        12. 做成 WiFi / BLE 可切换
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        总结
+        BLE MIDI peripheral 接入
       
     </span>
   </a>
@@ -571,14 +494,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../test1/" class="md-nav__link">
+      <a href="../issues-and-fixes/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    调试记录
+    报错与处理
   
 
     
@@ -598,14 +521,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../report/" class="md-nav__link">
+      <a href="../project-status/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    功能状态
+    项目状态
   
 
     
@@ -625,7 +548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Ecoli/" class="md-nav__link">
+      <a href="../site-structure/" class="md-nav__link">
         
   
   
@@ -652,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git/" class="md-nav__link">
+      <a href="../git-commands/" class="md-nav__link">
         
   
   
@@ -701,10 +624,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#es8311" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ES8311 音频接入
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        项目背景
+        声音小和音量处理
       
     </span>
   </a>
@@ -712,10 +646,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#wifi-applemidi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 重新定位工程
+        WiFi 和 AppleMIDI 接入
       
     </span>
   </a>
@@ -723,10 +657,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-esp32_host_midi" class="md-nav__link">
+  <a href="#hosted-wifi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 接入 ESP32_Host_MIDI
+        Hosted WiFi 内存问题
       
     </span>
   </a>
@@ -734,10 +668,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#wifi-ble_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. 清理旧依赖
+        WiFi 与 BLE 功能开关
       
     </span>
   </a>
@@ -745,10 +679,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-usb-midi" class="md-nav__link">
+  <a href="#p4-c5-hosted-ble" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 建立最小 USB MIDI 验证入口
+        P4 + C5 Hosted BLE 开启
       
     </span>
   </a>
@@ -756,98 +690,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-usb-midi" class="md-nav__link">
+  <a href="#ble-midi-peripheral" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. 处理 USB MIDI 重复事件
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-piano" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. 移植 piano 显示层
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-es8311" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. 接入 ES8311 音频
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-wifi-hosted-applemidi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. 接入 WiFi Hosted 和 AppleMIDI
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-dma" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. 分析 DMA 与运行日志
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-hosted-ble" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. 配置 Hosted BLE
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-ble-midi-peripheral" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        11. 接入 BLE MIDI peripheral
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#12-wifi-ble" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        12. 做成 WiFi / BLE 可切换
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        总结
+        BLE MIDI peripheral 接入
       
     </span>
   </a>
@@ -874,163 +720,38 @@
   
 
 
-<h1 id="wt99p4c5-midi-piano">WT99P4C5 MIDI Piano 移植日志<a class="headerlink" href="#wt99p4c5-midi-piano" title="Permanent link">&para;</a></h1>
-<p>这篇日志记录了我在 WT99P4C5-S1，也就是 ESP32-P4 + ESP32-C5 板子上，把 <code>ESP32_Host_MIDI</code> 的 piano 固件迁移成一个可用 MIDI Piano 工程的过程。</p>
-<p>目标是尽量复用上游 Arduino 工程，减少重写量，让工程在 ESP-IDF + Arduino component 混合编译环境下稳定运行，并支持 USB MIDI、屏幕显示、音频输出、WiFi AppleMIDI 和 BLE MIDI。</p>
-<h2 id="_1">项目背景<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>原始工程是一个面向 WT99P4C5-S1 的 ESP-IDF 综合示例，带有 Brookesia/LVGL、摄像头、音频、显示等能力。它适合作为板级能力参考，但不适合作为 MIDI Piano 主应用直接继续堆功能。</p>
-<p>重新定义后的目标如下：</p>
-<ul>
-<li>主控是 ESP32-P4。</li>
-<li>WiFi 和蓝牙能力由从机 ESP32-C5 通过 ESP-Hosted 提供。</li>
-<li>C5 已经烧录并配置好 hosted slave 固件。</li>
-<li>P4 侧使用 ESP-IDF，并引入 Arduino component 混合编译。</li>
-<li>MIDI 核心逻辑尽量复用 <code>ESP32_Host_MIDI</code> 的上游 Arduino 代码。</li>
-<li>屏幕从上游示例迁移到 SPI 协议。</li>
-<li>USB 作为 Host 接入 MIDI 键盘。</li>
-<li>WiFi 支持 AppleMIDI / RTP-MIDI。</li>
-<li>BLE 作为 BLE MIDI peripheral 被手机或软件发现连接。</li>
-<li>板载音频使用 ES8311，外接 NS4150B 功放。</li>
-</ul>
-<h2 id="1">1. 重新定位工程<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p>第一步是确认工程本质：它是 ESP-IDF/CMake 工程，不是普通 Arduino 工程。旧工程里的 Brookesia、LVGL、摄像头示例都不是 MIDI piano 主线。</p>
-<p>我把工程收敛成：</p>
-<ul>
-<li>ESP-IDF 作为主构建系统。</li>
-<li>Arduino 作为 IDF component 使用。</li>
-<li><code>ESP32_Host_MIDI</code> 作为上游库接入。</li>
-<li>只保留 MIDI piano 所需依赖。</li>
-<li>不继续沿用旧 Brookesia 手机 UI 作为主应用。</li>
-</ul>
-<h2 id="2-esp32_host_midi">2. 接入 ESP32_Host_MIDI<a class="headerlink" href="#2-esp32_host_midi" title="Permanent link">&para;</a></h2>
-<p>上游库复制到 <code>components/ESP32_Host_MIDI</code> 后，需要补 IDF 组件构建入口。第一版只纳入最小可验证能力：</p>
-<ul>
-<li>MIDI 核心 handler。</li>
-<li>USB Host MIDI。</li>
-<li>UART MIDI。</li>
-</ul>
-<p>先不要把 BLE、RTP-MIDI、OSC、ESP-NOW 全部一次性编进来。这样可以先确认 <code>MIDIHandler + USBConnection + Arduino as IDF component</code> 这条主线稳定。</p>
-<p>关键点是 USB 依赖必须作为公共依赖传递，因为 <code>USBConnection.h</code> 会公开包含 <code>usb/usb_host.h</code>。如果 <code>usb</code> 只放在私有依赖里，<code>main</code> 间接 include 时会找不到头文件。</p>
-<h2 id="3">3. 清理旧依赖<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<p>旧工程的 Brookesia/LVGL 依赖会干扰 MIDI 固件构建。我做了这些处理：</p>
-<ul>
-<li>移除不再需要的 Brookesia 依赖。</li>
-<li>暂停下载 <code>lvgl/lvgl</code> 和 <code>esp_lvgl_port</code>。</li>
-<li>保留后续真正需要的板级能力，例如 SPI、GPIO、USB、音频、WiFi remote。</li>
-<li>BSP 侧用无图形库模式先跑通主线。</li>
-</ul>
-<p>这一步之后，工程从综合 demo 变成更清晰的 MIDI 固件工程。</p>
-<h2 id="4-usb-midi">4. 建立最小 USB MIDI 验证入口<a class="headerlink" href="#4-usb-midi" title="Permanent link">&para;</a></h2>
-<p>主程序先只做最小验证：</p>
-<ul>
-<li>初始化 NVS。</li>
-<li>初始化 Arduino runtime。</li>
-<li>初始化 USB MIDI Host。</li>
-<li>注册 MIDI 数据回调。</li>
-<li>调用 MIDI handler 解析收到的数据。</li>
-<li>在串口日志里打印 NoteOn / NoteOff。</li>
-</ul>
-<p>验证通过后，P4 的 USB Host 可以识别并读取 class-compliant USB MIDI 设备。</p>
-<h2 id="5-usb-midi">5. 处理 USB MIDI 重复事件<a class="headerlink" href="#5-usb-midi" title="Permanent link">&para;</a></h2>
-<p>最开始同一个音符事件会打印两次。处理思路是让 USB transport 只负责收包，由主应用统一把原始数据交给 MIDI handler，避免同一份数据被 transport 队列和手动回调重复消费。</p>
-<p>如果仍然重复，可以加一个很窄的 USB-MIDI packet 去重保护：</p>
-<ul>
-<li>只在极短时间窗口内去掉完全相同的 4 字节 USB-MIDI packet。</li>
-<li>比较时忽略 cable number，用来兼容设备通过多个 virtual cable 发同一份数据的情况。</li>
-<li>不影响正常快速连按，因为窗口非常短。</li>
-</ul>
-<h2 id="6-piano">6. 移植 piano 显示层<a class="headerlink" href="#6-piano" title="Permanent link">&para;</a></h2>
-<p>屏幕部分按上游 piano display 的思路做最小迁移：</p>
-<ul>
-<li><code>PianoState</code> 维护 128 个 MIDI note 的状态。</li>
-<li><code>PianoDisplay</code> 负责绘制 ST7789 SPI 屏。</li>
-<li>屏幕方向使用横屏 320x170。</li>
-<li>默认绘制 25 键 piano view。</li>
-<li>背光单独用 GPIO 控制。</li>
-<li>所有屏幕引脚、偏移、旋转、颜色顺序集中到 <code>piano_config.h</code>。</li>
-</ul>
-<p>默认引脚曾按可用 IO 先定为：</p>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">SCLK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">MOSI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">CS</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">DC</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">RST</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">BLK</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">38</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">MISO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span>
+<h1 id="wifi-ble">音频、WiFi 与 BLE 移植记录<a class="headerlink" href="#wifi-ble" title="Permanent link">&para;</a></h1>
+<p>这一页记录 SPI 屏幕跑通后，继续接入 ES8311 音频、AppleMIDI 和 BLE MIDI 的过程。</p>
+<h2 id="es8311">ES8311 音频接入<a class="headerlink" href="#es8311" title="Permanent link">&para;</a></h2>
+<p>屏幕跑通后，开始处理音频。板级支持文件中已有 I2S 和 ES8311 的初始化函数，Host-MIDI 示例中也有 <code>SynthEngine.h</code>。因此音频部分沿用 Host-MIDI 的合成思路，将输出端换成 P4C5 板子上的 ES8311。</p>
+<p>新增的音频合成层负责根据 MIDI NoteOn / NoteOff 管理复音、生成 PCM 数据，并把音频写到 ES8311。主应用中的 MIDI 事件同时进入显示层和音频层。</p>
+<p>这里遇到一个硬件冲突：屏幕 SPI 一开始用了 GPIO&#8542;，而 BSP 中 ES8311 的 I2C 也在 GPIO&#8542;。为了保留已经调通的屏幕链路，先加了冲突保护；后续屏幕 SPI 挪到其他引脚后，音频链路能够正常初始化。</p>
+<h2 id="_1">声音小和音量处理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>音频第一次能出声后，频率正确，但声音很小。最后通过调整音量增强参数增大声音增益。重新烧录后声音恢复，并且比最开始更大。</p>
+<p>后续又出现低频偏小、高频偏大的听感问题。处理方式不是继续单纯拉大总音量，而是加入按音高变化的增益补偿：低音区补一点，高音区压一点。这样听感比单纯提高主增益更自然。</p>
+<h2 id="wifi-applemidi">WiFi 和 AppleMIDI 接入<a class="headerlink" href="#wifi-applemidi" title="Permanent link">&para;</a></h2>
+<p>音频之后开始接 WiFi。P4 的 WiFi 由 C5 hosted slave 提供，前期已成功烧录 C5 例程，并使用 ESP-IDF 官方可用参考代码验证。</p>
+<p><code>ESP32_Host_MIDI</code> 的 RTP-MIDI 示例依赖 Arduino 的 <code>WiFiUDP</code>、<code>ESPmDNS</code> 和 AppleMIDI 接口，直接重写成纯 IDF UDP 会牵扯更多适配。因此 AppleMIDI 和 MIDI 库被补上 IDF 组件构建，RTP-MIDI 作为新的 MIDI transport 接入现有 <code>midiHandler</code>，同时新增 WiFi 封装层负责连接热点、启动 mDNS 和 RTP-MIDI。</p>
+<p>这一步编译时遇到 AppleMIDI 的位判断错误：库里把 <code>(flags &amp; FLAG)</code> 写成 <code>== 1</code>，在当前编译器和 <code>-Werror</code> 下会被判成永远 false。相关判断改成 <code>!= 0</code> 后，AppleMIDI 编译通过。</p>
+<h2 id="hosted-wifi">Hosted WiFi 内存问题<a class="headerlink" href="#hosted-wifi" title="Permanent link">&para;</a></h2>
+<p>WiFi 第一次运行时，<code>esp_hosted</code> 创建 SDIO mempool 时出现 <code>no mem</code>，说明 DMA 资源分配不足。处理方式是先调整 hosted SDIO 队列和不必要的 hosted 功能，压低内部 DMA 内存占用。</p>
+<p>调完后 P4 能连上热点，MIDI 软件也能搜索到设备。</p>
+<p>当时弹琴仍然没有传到手机端。后续确认 RTP-MIDI transport 只是作为输入接进本地 synth，USB 键盘输入不会自动发到 AppleMIDI。也就是说设备能被发现，但 USB MIDI 没有桥接到网络端。</p>
+<p>USB transport 随后从自动队列中拆出，改为手动处理：USB 收到 MIDI 后，一份喂给本地显示和音频，一份转发给 RTP-MIDI。这样手机端能够收到 MIDI 消息并演奏。</p>
+<h2 id="wifi-ble_1">WiFi 与 BLE 功能开关<a class="headerlink" href="#wifi-ble_1" title="Permanent link">&para;</a></h2>
+<p>WiFi AppleMIDI 跑通后，日志中没有明显 mempool 或 SDIO DMA 失败，WiFi 单独运行已经可用。</p>
+<p>为了防止 DMA 后续溢出，程序设置了 WiFi、BLE 开启标志位。如遇到 DMA 可分配资源过小，可以通过修改标志位决定开关状态。WiFi MIDI 和 BLE MIDI 都做成独立开关，用于按需要选择单独 WiFi、单独 BLE，或两者一起运行。</p>
+<h2 id="p4-c5-hosted-ble">P4 + C5 Hosted BLE 开启<a class="headerlink" href="#p4-c5-hosted-ble" title="Permanent link">&para;</a></h2>
+<p>BLE 不能按普通 ESP32 本地蓝牙处理，因为 P4 本身没有蓝牙控制器。配置路线是打开 P4 侧 Bluetooth Host、关闭本地 Controller，并启用 NimBLE + Hosted VHCI。</p>
+<p>配置完成后，启动日志中出现：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Host BT Support: Enabled
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>BT Transport Type: VHCI
 </span></code></pre></div>
-<p>调试时遇到过 <code>fillScreen()</code> panic、panel 指针为空、屏幕亮但花屏、一圈花屏、一圈白屏等问题。最终通过延迟创建 LovyanGFX 对象、检查初始化结果、修正 4-wire SPI、调整 offset/rotation/RGB 顺序解决。</p>
-<h2 id="7-es8311">7. 接入 ES8311 音频<a class="headerlink" href="#7-es8311" title="Permanent link">&para;</a></h2>
-<p>音频部分参考板级支持代码里的 I2S 和 ES8311 初始化逻辑，同时参考上游 piano 示例里的 synth engine 思路。</p>
-<p>完成内容：</p>
-<ul>
-<li>初始化 ES8311 codec。</li>
-<li>建立 I2S 输出。</li>
-<li>把 MIDI NoteOn / NoteOff 映射成合成器发声和停音。</li>
-<li>让显示、MIDI 解析、音频响应共用同一套 note 状态。</li>
-<li>增加主音量、单音增益、低频增益、高频增益等参数。</li>
-<li>确认 NS4150B 功放使能脚是 GPIO53。</li>
-</ul>
-<p>调试中一度出现声音很小或无声。最终确认功放使能脚后，音频链路恢复。</p>
-<h2 id="8-wifi-hosted-applemidi">8. 接入 WiFi Hosted 和 AppleMIDI<a class="headerlink" href="#8-wifi-hosted-applemidi" title="Permanent link">&para;</a></h2>
-<p>P4 的 WiFi 由 C5 hosted slave 提供，因此 P4 侧不重写 WiFi 底层，而是让 Arduino <code>WiFi.h</code> 走 ESP-Hosted 适配路径。</p>
-<p>完成内容：</p>
-<ul>
-<li>使用 Arduino WiFi 接口连接热点。</li>
-<li>接入 AppleMIDI / RTP-MIDI。</li>
-<li>加入 mDNS 服务发现。</li>
-<li>让手机或 MIDI 软件能发现当前设备。</li>
-<li>把 USB MIDI 输入转发到 RTP-MIDI。</li>
-<li>让 RTP-MIDI 传入的数据进入显示和音频逻辑。</li>
-</ul>
-<p>一个关键问题是：一开始设备可以被 MIDI 软件发现，但弹琴没有声音。原因是 USB MIDI 收到的数据只进入本地显示和合成器，没有真正桥接到 RTP-MIDI 输出。补上 USB -&gt; RTP-MIDI 转发后，手机可以收到 MIDI 消息并演奏。</p>
-<h2 id="9-dma">9. 分析 DMA 与运行日志<a class="headerlink" href="#9-dma" title="Permanent link">&para;</a></h2>
-<p>WiFi MIDI 跑通后，日志里重点看这些内容：</p>
-<ul>
-<li>hosted WiFi 是否 ready。</li>
-<li>RTP-MIDI 是否 ready。</li>
-<li>是否出现 mempool 或 DMA 严重失败。</li>
-<li>I2S 是否只是 <code>dma frame num is adjusted</code> 这类对齐提示。</li>
-<li>RTP-MIDI peer 数量是否从 0 变成 1。</li>
-</ul>
-<p>结论是：WiFi 单独运行时 DMA 内存够用。BLE MIDI 数据量很小，真正压力主要来自 BT host 栈内存、WiFi hosted 队列和音频 DMA，所以 WiFi 与 BLE 最好做成可切换，而不是强制永远并发。</p>
-<h2 id="10-hosted-ble">10. 配置 Hosted BLE<a class="headerlink" href="#10-hosted-ble" title="Permanent link">&para;</a></h2>
-<p>P4 本身没有蓝牙控制器，所以不能按普通 ESP32 本地 BLE 配置。最终路线是：</p>
-<ul>
-<li>P4 侧开启 Bluetooth Host。</li>
-<li>P4 侧关闭本地 Bluetooth Controller。</li>
-<li>P4 侧使用 NimBLE。</li>
-<li>P4 侧启用 Hosted NimBLE over VHCI。</li>
-<li>C5 侧作为 hosted slave 提供 Bluetooth controller。</li>
-</ul>
-<p>关键验证日志：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Host BT Support: Enabled
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>BT Transport Type: VHCI
-</span></code></pre></div>
-<p>看到这两行后，说明 P4 到 C5 的蓝牙 HCI 通道已经起来。</p>
-<h2 id="11-ble-midi-peripheral">11. 接入 BLE MIDI peripheral<a class="headerlink" href="#11-ble-midi-peripheral" title="Permanent link">&para;</a></h2>
-<p>Hosted BLE 配置成功后，把 BLE MIDI 接进现有 piano 应用：</p>
-<ul>
-<li>让 <code>BLEConnection.cpp</code> 在 BT/NimBLE 开启时参与构建。</li>
-<li>给 CMake 添加 <code>bt</code> 依赖，避免 BLE 头文件间接包含 NimBLE 头时找不到依赖。</li>
-<li>把 BLE 初始化结果改成可返回成功或失败。</li>
-<li>新增 <code>piano_ble</code> transport 封装层。</li>
-<li>在主应用里初始化 BLE MIDI。</li>
-<li>将 BLE MIDI transport 注册到统一 MIDI handler。</li>
-<li>把 USB MIDI 输入同时转发到 BLE MIDI。</li>
-<li>BLE 端发送来的 MIDI 也进入现有显示和音频链路。</li>
-<li>BLE 断开时清理活动音符，避免挂音。</li>
-</ul>
-<h2 id="12-wifi-ble">12. 做成 WiFi / BLE 可切换<a class="headerlink" href="#12-wifi-ble" title="Permanent link">&para;</a></h2>
-<p>最终配置设计：</p>
-<ul>
-<li><code>PIANO_APP_ENABLE_WIFI</code> 控制 WiFi / AppleMIDI。</li>
-<li><code>PIANO_APP_ENABLE_BLE</code> 控制 BLE MIDI。</li>
-<li>两者可以尝试同时开启。</li>
-<li>如果出现内存紧张、初始化失败或延迟抖动，优先改成单独 BLE 或单独 WiFi 模式。</li>
-</ul>
-<p>这样后续调试不需要重写代码，只需要改配置。</p>
-<h2 id="_2">总结<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>这个工程已经从原来的 WT99P4C5-S1 综合示例，迁移成一个完整的 MIDI Piano 固件。整体思路是最小化重写、最大化复用上游 Arduino MIDI 代码，同时用 IDF 组件方式把每个功能稳定接进 P4+C5 的实际硬件环境。</p>
+<p>看到这两行后，可以确认 P4 到 C5 的蓝牙 HCI 通道已经启动。</p>
+<h2 id="ble-midi-peripheral">BLE MIDI peripheral 接入<a class="headerlink" href="#ble-midi-peripheral" title="Permanent link">&para;</a></h2>
+<p>最后将 <code>ESP32_Host_MIDI</code> 中现有的 BLE transport 接进工程。这个过程没有额外下载 Arduino BLE 库，因为 Arduino-ESP32 component 中已经带有 BLE 相关实现。</p>
+<p>BLE 源文件在 BT/NimBLE 开启时参与构建，并补上 BT 依赖，避免 BLE 头文件间接包含 NimBLE 头时找不到依赖。同时新增 BLE MIDI 封装层，用于初始化 BLE MIDI peripheral、维护连接状态，并把 BLE MIDI 数据送进统一的 MIDI handler。</p>
+<p>BLE 接完后，USB MIDI 输入也能同时转发到 BLE MIDI，BLE 端发来的 MIDI 也能进入本地显示和音频链路。到这里，USB、显示、音频、WiFi AppleMIDI 和 BLE MIDI 都完成收尾。</p>
 
 
 
