@@ -914,6 +914,7 @@
 </span></code></pre></div>
 <p><code>serve</code> 用于本地预览，<code>build</code> 生成静态网页，<code>--strict</code> 用来检查文档构建中的警告。此前 <code>serve</code> 遇到过 click 版本兼容问题，当时通过 <code>pip install click==8.2.1</code> 处理。</p>
 <h2 id="_1">当前文档树<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>当前正式文档共 <strong>14 篇</strong>：首页 1 篇、MIDI Piano 7 篇、天气屏 4 篇、站点与 Git 说明 2 篇。 <code>new.md</code> 是归档记录，不计入正式文档。</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>.
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── mkdocs.yml
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── docs/
@@ -930,13 +931,17 @@
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│   │   ├── porting-log.md        # 天气屏复刻日志
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│   │   ├── usage-api.md          # 使用与 Open-Meteo API
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>│   │   └── issues-and-status.md  # 天气屏报错与状态
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>│   ├── site-structure.md
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>│   ├── git-commands.md
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>│   ├── img/
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>│   │   ├── usage/                # MIDI 使用截图
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>│   │   └── weather/              # 天气界面像素预览
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>│   └── javascripts/mathjax.js
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>└── site/                         # 静态网页，有独立 Git 仓库
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>│   ├── site-structure.md         # 站点结构与发布记录
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>│   ├── git-commands.md           # Git 常用操作
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>│   ├── new.md                    # 旧完整记录，不参与构建
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>│   ├── img/
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>│   │   ├── favicon.png           # 站点图标
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>│   │   ├── usage/                # MIDI 使用截图
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>│   │   └── weather/              # 天气屏界面与实物照片
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>│   │       ├── weather-ui-preview.png
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>│   │       └── weather-display-2026-10-05.jpg
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>│   └── javascripts/mathjax.js
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>└── site/                         # 静态网页，有独立 Git 仓库
 </span></code></pre></div>
 <p>MIDI Piano 的旧页面地址继续保留。原首页内容放到 <code>piano/index.md</code>，首页增加两个项目入口。<code>new.md</code> 是旧的完整记录，仍不加入正式导航。</p>
 <h2 id="_2">文档与网页仓库<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
