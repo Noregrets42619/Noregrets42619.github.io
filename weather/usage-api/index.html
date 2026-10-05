@@ -10,31 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://noregrets42619.github.io/site-structure/">
+        <link rel="canonical" href="https://noregrets42619.github.io/weather/usage-api/">
       
       
-        <link rel="prev" href="../weather/issues-and-status/">
+        <link rel="prev" href="../porting-log/">
       
       
-        <link rel="next" href="../git-commands/">
+        <link rel="next" href="../issues-and-status/">
       
       
         
       
       
-      <link rel="icon" href="../img/favicon.png">
+      <link rel="icon" href="../../img/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Ecoli 站点 - Ecoli</title>
+        <title>使用与天气 API - Ecoli</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,7 +53,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ecoli" class="md-skip">
+        <a href="#open-meteo-api" class="md-skip">
           跳转至
         </a>
       
@@ -94,9 +94,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href=".." title="Ecoli" class="md-header__button md-logo" aria-label="Ecoli" data-md-component="logo">
+    <a href="../.." title="Ecoli" class="md-header__button md-logo" aria-label="Ecoli" data-md-component="logo">
       
-  <img src="../img/favicon.png" alt="logo">
+  <img src="../../img/favicon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ecoli 站点
+              使用与天气 API
             
           </span>
         </div>
@@ -231,9 +231,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Ecoli" class="md-nav__button md-logo" aria-label="Ecoli" data-md-component="logo">
+    <a href="../.." title="Ecoli" class="md-nav__button md-logo" aria-label="Ecoli" data-md-component="logo">
       
-  <img src="../img/favicon.png" alt="logo">
+  <img src="../../img/favicon.png" alt="logo">
 
     </a>
     Ecoli
@@ -260,7 +260,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -317,7 +317,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../piano/" class="md-nav__link ">
+            <a href="../../piano/" class="md-nav__link ">
               
   
   
@@ -361,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../usage-guide/" class="md-nav__link">
+      <a href="../../usage-guide/" class="md-nav__link">
         
   
   
@@ -389,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../project-setup/" class="md-nav__link">
+      <a href="../../project-setup/" class="md-nav__link">
         
   
   
@@ -417,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../usb-display/" class="md-nav__link">
+      <a href="../../usb-display/" class="md-nav__link">
         
   
   
@@ -445,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../audio-network-ble/" class="md-nav__link">
+      <a href="../../audio-network-ble/" class="md-nav__link">
         
   
   
@@ -473,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../issues-and-fixes/" class="md-nav__link">
+      <a href="../../issues-and-fixes/" class="md-nav__link">
         
   
   
@@ -501,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../project-status/" class="md-nav__link">
+      <a href="../../project-status/" class="md-nav__link">
         
   
   
@@ -533,6 +533,8 @@
       
   
   
+    
+  
   
   
     
@@ -552,15 +554,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../weather/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -584,7 +586,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -604,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../weather/porting-log/" class="md-nav__link">
+      <a href="../porting-log/" class="md-nav__link">
         
   
   
@@ -629,10 +631,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../weather/usage-api/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用与天气 API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -648,6 +677,122 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 下载与开发环境
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-wi-fi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 填写自己的 Wi-Fi 密码
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 地点与时区
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-open-meteo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Open-Meteo 请求
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Open-Meteo 请求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据与单位
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 编译与烧录
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 正常更新过程
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 单屏诊断
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -660,7 +805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../weather/issues-and-status/" class="md-nav__link">
+      <a href="../issues-and-status/" class="md-nav__link">
         
   
   
@@ -692,37 +837,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Ecoli 站点
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../site-structure/" class="md-nav__link">
         
   
   
@@ -738,61 +856,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mkdocs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MkDocs 命令
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        当前文档树
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        文档与网页仓库
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -804,7 +867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git-commands/" class="md-nav__link">
+      <a href="../../git-commands/" class="md-nav__link">
         
   
   
@@ -853,10 +916,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mkdocs" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        MkDocs 命令
+        1. 下载与开发环境
       
     </span>
   </a>
@@ -864,10 +927,60 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#2-wi-fi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 填写自己的 Wi-Fi 密码
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 地点与时区
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-open-meteo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Open-Meteo 请求
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Open-Meteo 请求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        当前文档树
+        数据与单位
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 编译与烧录
       
     </span>
   </a>
@@ -875,10 +988,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        文档与网页仓库
+        6. 正常更新过程
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 单屏诊断
       
     </span>
   </a>
@@ -905,43 +1029,142 @@
   
 
 
-<h1 id="ecoli">Ecoli 站点记录<a class="headerlink" href="#ecoli" title="Permanent link">&para;</a></h1>
-<p>站点继续使用 Material for MkDocs，保留 Ecoli 的名字、图标与原来的主题。文档按开发板和工程分组，P4C5 MIDI Piano 与 WT32-ETH01 天气屏分别放在导航中。</p>
-<h2 id="mkdocs">MkDocs 命令<a class="headerlink" href="#mkdocs" title="Permanent link">&para;</a></h2>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">mkdocs</span> <span class="n">serve</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">mkdocs</span> <span class="n">build</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">mkdocs</span> <span class="n">build</span> <span class="p">-</span><span class="n">-strict</span>
+<h1 id="open-meteo-api">天气屏使用与 Open-Meteo API<a class="headerlink" href="#open-meteo-api" title="Permanent link">&para;</a></h1>
+<p>这一页记录当前天气屏工程的配置与使用。屏幕接线见 <a href="../">项目与硬件</a>，驱动排查过程见 <a href="../porting-log/">复刻日志</a>。</p>
+<h2 id="1">1. 下载与开发环境<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">://</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">Noregrets42619</span><span class="p">/</span><span class="n">esp32-e-paper-weatherdisplay</span><span class="p">.</span><span class="n">git</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd </span><span class="n">esp32-e-paper-weatherdisplay</span>
 </span></code></pre></div>
-<p><code>serve</code> 用于本地预览，<code>build</code> 生成静态网页，<code>--strict</code> 用来检查文档构建中的警告。此前 <code>serve</code> 遇到过 click 版本兼容问题，当时通过 <code>pip install click==8.2.1</code> 处理。</p>
-<h2 id="_1">当前文档树<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>.
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── mkdocs.yml
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── docs/
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│   ├── index.md                  # 两个项目的首页入口
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│   ├── piano/index.md            # 原 MIDI Piano 概览
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│   ├── usage-guide.md            # MIDI Piano 使用说明
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│   ├── project-setup.md          # P4C5 工程准备
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│   ├── usb-display.md            # USB MIDI 与 SPI 显示
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│   ├── audio-network-ble.md      # 音频、WiFi 与 BLE
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│   ├── issues-and-fixes.md       # MIDI Piano 报错处理
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>│   ├── project-status.md         # MIDI Piano 状态
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>│   ├── weather/
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>│   │   ├── index.md              # 天气屏项目与硬件
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│   │   ├── porting-log.md        # 天气屏复刻日志
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│   │   ├── usage-api.md          # 使用与 Open-Meteo API
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>│   │   └── issues-and-status.md  # 天气屏报错与状态
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>│   ├── site-structure.md
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>│   ├── git-commands.md
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>│   ├── img/
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>│   │   ├── usage/                # MIDI 使用截图
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>│   │   └── weather/              # 天气界面像素预览
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>│   └── javascripts/mathjax.js
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>└── site/                         # 静态网页，有独立 Git 仓库
+<p>工程目标为普通 <code>esp32</code>，不是 <code>esp32p4</code> 或 <code>esp32c5</code>。本机使用 VS Code 的 Espressif IDF 扩展，IDF 目录为 <code>D:\ESP\espidf\v5.5\esp-idf</code>，实际版本为 <code>v5.5.4-299-ge46782886f</code>。</p>
+<p>打开工程目录，运行 <code>ESP-IDF: Open ESP-IDF Terminal</code>，首次配置执行：</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">idf</span><span class="p">.</span><span class="n">py</span> <span class="nb">set-target</span> <span class="n">esp32</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">idf</span><span class="p">.</span><span class="n">py</span> <span class="n">menuconfig</span>
 </span></code></pre></div>
-<p>MIDI Piano 的旧页面地址继续保留。原首页内容放到 <code>piano/index.md</code>，首页增加两个项目入口。<code>new.md</code> 是旧的完整记录，仍不加入正式导航。</p>
-<h2 id="_2">文档与网页仓库<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>文档源码放在 <a href="https://github.com/Noregrets42619/project">project</a>，生成网页放在 <a href="https://github.com/Noregrets42619/Noregrets42619.github.io">Noregrets42619.github.io</a>。<code>site</code> 目录不再由文档源码仓库重复跟踪，网页更新在它自己的仓库中提交。</p>
-<p>天气屏固件与 README 放在独立的 <a href="https://github.com/Noregrets42619/esp32-e-paper-weatherdisplay">esp32-e-paper-weatherdisplay</a> 仓库。</p>
+<h2 id="2-wi-fi">2. 填写自己的 Wi-Fi 密码<a class="headerlink" href="#2-wi-fi" title="Permanent link">&para;</a></h2>
+<p><strong>先在 <code>WiFi Configuration</code> 中修改 WiFi SSID 和 WiFi Password，再编译烧录。</strong> 仓库里的 <code>myssid</code> 和 <code>mypassword</code> 只是占位值，ESP32 使用 2.4GHz 网络。</p>
+<p>本地也可以保留 <code>sdkconfig.wifi.local</code>：</p>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="na">CONFIG_ESP_WIFI_SSID</span><span class="o">=</span><span class="s">&quot;YOUR_2_4GHZ_WIFI_NAME&quot;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">CONFIG_ESP_WIFI_PASSWORD</span><span class="o">=</span><span class="s">&quot;YOUR_WIFI_PASSWORD&quot;</span>
+</span></code></pre></div>
+<p>这个文件不提交 GitHub。已经生成过 <code>sdkconfig</code> 时，以当前配置为准，换网要在 <code>menuconfig</code> 中一并修改。</p>
+<h2 id="3">3. 地点与时区<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p><code>Open-Meteo Weather Configuration</code> 中的默认配置为：</p>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>地点名称</td>
+<td>成都市郫都区</td>
+</tr>
+<tr>
+<td>纬度</td>
+<td>30.80993</td>
+</tr>
+<tr>
+<td>经度</td>
+<td>103.88253</td>
+</tr>
+<tr>
+<td>API 时区</td>
+<td>Asia/Shanghai</td>
+</tr>
+</tbody>
+</table>
+<p>地点名称只用来绘图；天气查询取决于 WGS84 经纬度。这组坐标代表郫筒一带，不是整个郫都区的平均天气。</p>
+<p><code>WT32-ETH01 Configuration</code> 中本地 POSIX 时区是 <code>CST-8</code>，也就是 UTC+8。接口返回 Unix 时间后，通过本地时区转换成屏幕上的日期和时间。</p>
+<p>改成其他中文地点时，若有字符显示为 <code>?</code>，先将字符补到 <code>main/fonts/characters.txt</code>，再按仓库 README 的方法重新生成字体。</p>
+<h2 id="4-open-meteo">4. Open-Meteo 请求<a class="headerlink" href="#4-open-meteo" title="Permanent link">&para;</a></h2>
+<p>当前接口为 <a href="https://open-meteo.com/en/docs">Open-Meteo Forecast API</a>：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>GET https://api.open-meteo.com/v1/forecast
+</span></code></pre></div>
+<p>个人非商业用途使用公开免费接口，不需要注册账号或填写 API Key。商业使用及调用限制见 <a href="https://open-meteo.com/en/pricing">官方服务方案</a>。</p>
+<p>固件实际使用的参数如下：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>latitude=30.80993
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>longitude=103.88253
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>current=temperature_2m,relative_humidity_2m,pressure_msl,wind_speed_10m,wind_direction_10m,weather_code,is_day
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>timezone=Asia/Shanghai
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>forecast_days=7
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>timeformat=unixtime
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>wind_speed_unit=ms
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>temperature_unit=celsius
+</span></code></pre></div>
+<p>代码在 <code>components/weather/src/weather.c</code>。<code>weather_parse.c</code> 检查单位、数值范围、七天数组和日期先后关系，再把数据交给界面。</p>
+<h3 id="_1">数据与单位<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>屏幕含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>temperature_2m</code></td>
+<td>当前温度，℃</td>
+</tr>
+<tr>
+<td><code>relative_humidity_2m</code></td>
+<td>相对湿度，%</td>
+</tr>
+<tr>
+<td><code>pressure_msl</code></td>
+<td>海平面气压，hPa</td>
+</tr>
+<tr>
+<td><code>wind_speed_10m</code></td>
+<td>请求 m/s，显示时乘 3.6 变成 km/h</td>
+</tr>
+<tr>
+<td><code>wind_direction_10m</code></td>
+<td>角度换算为中文风向</td>
+</tr>
+<tr>
+<td><code>weather_code</code></td>
+<td>天气文字与图标</td>
+</tr>
+<tr>
+<td><code>is_day</code></td>
+<td>晴天的太阳或月亮</td>
+</tr>
+<tr>
+<td><code>temperature_2m_max/min</code></td>
+<td>每天最高温和最低温</td>
+</tr>
+<tr>
+<td><code>precipitation_probability_max</code></td>
+<td>当天最大小时降水概率</td>
+</tr>
+</tbody>
+</table>
+<p>“当前天气”来自天气模型，不是板上实测。七天的天气代码表示各天最严重的天气情况，见 <a href="https://open-meteo.com/en/docs">Open-Meteo 字段说明</a>。</p>
+<p>“今日最高降水概率”不是当前时刻的概率，也不是降水量。缺失时显示“暂无数据”，不会当成 0%。屏幕底部保留 <code>数据：Open-Meteo.com</code> 来源标注，数据采用 <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。</p>
+<h2 id="5">5. 编译与烧录<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">idf</span><span class="p">.</span><span class="n">py</span> <span class="n">build</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">idf</span><span class="p">.</span><span class="n">py</span> <span class="n">-p</span> <span class="n">COMx</span> <span class="n">flash</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">idf</span><span class="p">.</span><span class="n">py</span> <span class="n">-p</span> <span class="n">COMx</span> <span class="n">monitor</span>
+</span></code></pre></div>
+<p><code>COMx</code> 换成当前串口。烧录走 UART0，TX/RX 交叉连接并共地，串口电平为 3.3V。没有自动下载电路时，将 IO0 接地后复位进入下载模式，写完后断开 IO0 与 GND 并复位。</p>
+<p>工程使用 4MB Flash 分区表，两个 OTA 应用分区各 1.5MiB。首次使用或调整分区时完整烧录，不能只用旧分区 OTA 写应用。</p>
+<h2 id="6">6. 正常更新过程<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Wi-Fi 获取 IP
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    -&gt; NTP 校时
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    -&gt; HTTPS 请求 Open-Meteo
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    -&gt; 解析当前天气和七天预报
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    -&gt; 停止 Wi-Fi
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    -&gt; 刷新 G 型四色屏
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    -&gt; 屏幕休眠
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    -&gt; ESP32 深度睡眠
+</span></code></pre></div>
+<p>默认北京时间 07:00–22:50 每十分钟更新，夜间等到次日 07:00。Wi-Fi 连接失败后约三小时重试。天气请求失败时保留上次画面。</p>
+<h2 id="7">7. 单屏诊断<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<p>在 <code>WT32-ETH01 Configuration</code> 中启用 <code>Screen-only diagnostic (no Wi-Fi, SPI 100 kHz)</code>，重新编译烧录。此模式只显示测试文字和四色色带，ESP32 保持唤醒，方便测量。</p>
+<p>诊断失败后有 60 秒测量窗口，窗口结束时 RST 会被主动拉低。测试完成后关闭诊断模式、重新编译烧录，才能恢复天气功能。</p>
 
 
 
@@ -1003,12 +1226,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

@@ -10,31 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://noregrets42619.github.io/audio-network-ble/">
+        <link rel="canonical" href="https://noregrets42619.github.io/weather/porting-log/">
       
       
-        <link rel="prev" href="../usb-display/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../issues-and-fixes/">
+        <link rel="next" href="../usage-api/">
       
       
         
       
       
-      <link rel="icon" href="../img/favicon.png">
+      <link rel="icon" href="../../img/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>音频、WiFi 与 BLE - Ecoli</title>
+        <title>复刻日志 - Ecoli</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,7 +53,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wifi-ble" class="md-skip">
+        <a href="#wt32-eth01" class="md-skip">
           跳转至
         </a>
       
@@ -94,9 +94,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href=".." title="Ecoli" class="md-header__button md-logo" aria-label="Ecoli" data-md-component="logo">
+    <a href="../.." title="Ecoli" class="md-header__button md-logo" aria-label="Ecoli" data-md-component="logo">
       
-  <img src="../img/favicon.png" alt="logo">
+  <img src="../../img/favicon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              音频、WiFi 与 BLE
+              复刻日志
             
           </span>
         </div>
@@ -231,9 +231,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Ecoli" class="md-nav__button md-logo" aria-label="Ecoli" data-md-component="logo">
+    <a href="../.." title="Ecoli" class="md-nav__button md-logo" aria-label="Ecoli" data-md-component="logo">
       
-  <img src="../img/favicon.png" alt="logo">
+  <img src="../../img/favicon.png" alt="logo">
 
     </a>
     Ecoli
@@ -260,7 +260,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -284,8 +284,6 @@
       
   
   
-    
-  
   
   
     
@@ -311,15 +309,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../piano/" class="md-nav__link ">
+            <a href="../../piano/" class="md-nav__link ">
               
   
   
@@ -343,7 +341,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -363,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../usage-guide/" class="md-nav__link">
+      <a href="../../usage-guide/" class="md-nav__link">
         
   
   
@@ -391,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../project-setup/" class="md-nav__link">
+      <a href="../../project-setup/" class="md-nav__link">
         
   
   
@@ -419,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../usb-display/" class="md-nav__link">
+      <a href="../../usb-display/" class="md-nav__link">
         
   
   
@@ -444,37 +442,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    音频、WiFi 与 BLE
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../audio-network-ble/" class="md-nav__link">
         
   
   
@@ -490,105 +461,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#es8311" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ES8311 音频接入
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        声音小和音量处理
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wifi-applemidi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        WiFi 和 AppleMIDI 接入
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hosted-wifi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Hosted WiFi 内存问题
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wifi-ble_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        WiFi 与 BLE 功能开关
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#p4-c5-hosted-ble" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        P4 + C5 Hosted BLE 开启
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ble-midi-peripheral" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        BLE MIDI peripheral 接入
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -601,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../issues-and-fixes/" class="md-nav__link">
+      <a href="../../issues-and-fixes/" class="md-nav__link">
         
   
   
@@ -629,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../project-status/" class="md-nav__link">
+      <a href="../../project-status/" class="md-nav__link">
         
   
   
@@ -661,6 +533,8 @@
       
   
   
+    
+  
   
   
     
@@ -680,15 +554,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../weather/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -712,7 +586,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -729,10 +603,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../weather/porting-log/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    复刻日志
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -748,6 +649,149 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 下载原工程与调整引脚
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-esp-idf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 接入当前 ESP-IDF 环境
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-open-meteo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 换用 Open-Meteo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 编译成功，VS Code 仍有头文件红线
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-wi-fi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Wi-Fi 与天气请求跑通
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 最初按黑白 V2 驱动排查
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 单屏诊断与电压测量
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 确认屏幕是带 G 的型号
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 观察刷新耗时
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 改成中文四色天气界面
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 本阶段结果
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -760,7 +804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../weather/usage-api/" class="md-nav__link">
+      <a href="../usage-api/" class="md-nav__link">
         
   
   
@@ -788,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../weather/issues-and-status/" class="md-nav__link">
+      <a href="../issues-and-status/" class="md-nav__link">
         
   
   
@@ -823,7 +867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../site-structure/" class="md-nav__link">
+      <a href="../../site-structure/" class="md-nav__link">
         
   
   
@@ -850,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git-commands/" class="md-nav__link">
+      <a href="../../git-commands/" class="md-nav__link">
         
   
   
@@ -899,10 +943,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#es8311" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ES8311 音频接入
+        1. 下载原工程与调整引脚
       
     </span>
   </a>
@@ -910,10 +954,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#2-esp-idf" class="md-nav__link">
     <span class="md-ellipsis">
       
-        声音小和音量处理
+        2. 接入当前 ESP-IDF 环境
       
     </span>
   </a>
@@ -921,10 +965,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wifi-applemidi" class="md-nav__link">
+  <a href="#3-open-meteo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        WiFi 和 AppleMIDI 接入
+        3. 换用 Open-Meteo
       
     </span>
   </a>
@@ -932,10 +976,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hosted-wifi" class="md-nav__link">
+  <a href="#4-vs-code" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hosted WiFi 内存问题
+        4. 编译成功，VS Code 仍有头文件红线
       
     </span>
   </a>
@@ -943,10 +987,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wifi-ble_1" class="md-nav__link">
+  <a href="#5-wi-fi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        WiFi 与 BLE 功能开关
+        5. Wi-Fi 与天气请求跑通
       
     </span>
   </a>
@@ -954,10 +998,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#p4-c5-hosted-ble" class="md-nav__link">
+  <a href="#6-v2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        P4 + C5 Hosted BLE 开启
+        6. 最初按黑白 V2 驱动排查
       
     </span>
   </a>
@@ -965,10 +1009,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ble-midi-peripheral" class="md-nav__link">
+  <a href="#7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BLE MIDI peripheral 接入
+        7. 单屏诊断与电压测量
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 确认屏幕是带 G 的型号
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 观察刷新耗时
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 改成中文四色天气界面
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 本阶段结果
       
     </span>
   </a>
@@ -995,38 +1083,60 @@
   
 
 
-<h1 id="wifi-ble">音频、WiFi 与 BLE 移植记录<a class="headerlink" href="#wifi-ble" title="Permanent link">&para;</a></h1>
-<p>这一页记录 SPI 屏幕跑通后，继续接入 ES8311 音频、AppleMIDI 和 BLE MIDI 的过程。</p>
-<h2 id="es8311">ES8311 音频接入<a class="headerlink" href="#es8311" title="Permanent link">&para;</a></h2>
-<p>屏幕跑通后，开始处理音频。板级支持文件中已有 I2S 和 ES8311 的初始化函数，Host-MIDI 示例中也有 <code>SynthEngine.h</code>。因此音频部分沿用 Host-MIDI 的合成思路，将输出端换成 P4C5 板子上的 ES8311。</p>
-<p>新增的音频合成层负责根据 MIDI NoteOn / NoteOff 管理复音、生成 PCM 数据，并把音频写到 ES8311。主应用中的 MIDI 事件同时进入显示层和音频层。</p>
-<p>这里遇到一个硬件冲突：屏幕 SPI 一开始用了 GPIO&#8542;，而 BSP 中 ES8311 的 I2C 也在 GPIO&#8542;。为了保留已经调通的屏幕链路，先加了冲突保护；后续屏幕 SPI 挪到其他引脚后，音频链路能够正常初始化。</p>
-<h2 id="_1">声音小和音量处理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>音频第一次能出声后，频率正确，但声音很小。最后通过调整音量增强参数增大声音增益。重新烧录后声音恢复，并且比最开始更大。</p>
-<p>后续又出现低频偏小、高频偏大的听感问题。处理方式不是继续单纯拉大总音量，而是加入按音高变化的增益补偿：低音区补一点，高音区压一点。这样听感比单纯提高主增益更自然。</p>
-<h2 id="wifi-applemidi">WiFi 和 AppleMIDI 接入<a class="headerlink" href="#wifi-applemidi" title="Permanent link">&para;</a></h2>
-<p>音频之后开始接 WiFi。P4 的 WiFi 由 C5 hosted slave 提供，前期已成功烧录 C5 例程，并使用 ESP-IDF 官方可用参考代码验证。</p>
-<p><code>ESP32_Host_MIDI</code> 的 RTP-MIDI 示例依赖 Arduino 的 <code>WiFiUDP</code>、<code>ESPmDNS</code> 和 AppleMIDI 接口，直接重写成纯 IDF UDP 会牵扯更多适配。因此 AppleMIDI 和 MIDI 库被补上 IDF 组件构建，RTP-MIDI 作为新的 MIDI transport 接入现有 <code>midiHandler</code>，同时新增 WiFi 封装层负责连接热点、启动 mDNS 和 RTP-MIDI。</p>
-<p>这一步编译时遇到 AppleMIDI 的位判断错误：库里把 <code>(flags &amp; FLAG)</code> 写成 <code>== 1</code>，在当前编译器和 <code>-Werror</code> 下会被判成永远 false。相关判断改成 <code>!= 0</code> 后，AppleMIDI 编译通过。</p>
-<h2 id="hosted-wifi">Hosted WiFi 内存问题<a class="headerlink" href="#hosted-wifi" title="Permanent link">&para;</a></h2>
-<p>WiFi 第一次运行时，<code>esp_hosted</code> 创建 SDIO mempool 时出现 <code>no mem</code>，说明 DMA 资源分配不足。处理方式是先调整 hosted SDIO 队列和不必要的 hosted 功能，压低内部 DMA 内存占用。</p>
-<p>调完后 P4 能连上热点，MIDI 软件也能搜索到设备。</p>
-<p>当时弹琴仍然没有传到手机端。后续确认 RTP-MIDI transport 只是作为输入接进本地 synth，USB 键盘输入不会自动发到 AppleMIDI。也就是说设备能被发现，但 USB MIDI 没有桥接到网络端。</p>
-<p>USB transport 随后从自动队列中拆出，改为手动处理：USB 收到 MIDI 后，一份喂给本地显示和音频，一份转发给 RTP-MIDI。这样手机端能够收到 MIDI 消息并演奏。</p>
-<h2 id="wifi-ble_1">WiFi 与 BLE 功能开关<a class="headerlink" href="#wifi-ble_1" title="Permanent link">&para;</a></h2>
-<p>WiFi AppleMIDI 跑通后，日志中没有明显 mempool 或 SDIO DMA 失败，WiFi 单独运行已经可用。</p>
-<p>为了防止 DMA 后续溢出，程序设置了 WiFi、BLE 开启标志位。如遇到 DMA 可分配资源过小，可以通过修改标志位决定开关状态。WiFi MIDI 和 BLE MIDI 都做成独立开关，用于按需要选择单独 WiFi、单独 BLE，或两者一起运行。</p>
-<h2 id="p4-c5-hosted-ble">P4 + C5 Hosted BLE 开启<a class="headerlink" href="#p4-c5-hosted-ble" title="Permanent link">&para;</a></h2>
-<p>BLE 不能按普通 ESP32 本地蓝牙处理，因为 P4 本身没有蓝牙控制器。配置路线是打开 P4 侧 Bluetooth Host、关闭本地 Controller，并启用 NimBLE + Hosted VHCI。</p>
-<p>配置完成后，启动日志中出现：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Host BT Support: Enabled
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>BT Transport Type: VHCI
+<h1 id="wt32-eth01">WT32-ETH01 天气屏复刻日志<a class="headerlink" href="#wt32-eth01" title="Permanent link">&para;</a></h1>
+<p>原项目是 ESP32 墨水屏天气显示器。这次改用 WT32-ETH01，在现有 VS Code 的 ESP-IDF 环境中编译，天气接口改成 Open-Meteo，最后把显示层换成适合 G 型四色屏的中文界面。</p>
+<h2 id="1">1. 下载原工程与调整引脚<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>先把 <a href="https://github.com/henri98/esp32-e-paper-weatherdisplay">原工程</a> 下载到 <code>D:\ESP_PROJECT\esp32-e-paper-weatherdisplay</code>。联网方式继续使用 Wi-Fi，没有启用 WT32-ETH01 的 RJ45。</p>
+<p>原引脚不能直接照搬到这块板上，屏幕改接 MOSI=14、CLK=17、CS=4、DC=33、RST=32、BUSY=35。这里最容易认错的是 GPIO17：板上扩展接口也写 TXD，但它是 TX2，不是烧录 UART0。</p>
+<p>原工程的 OTA 按键也占 GPIO4，与新的屏幕 CS 冲突。按键改到只作输入的 GPIO39，外接 10kΩ 上拉，默认不启用。</p>
+<h2 id="2-esp-idf">2. 接入当前 ESP-IDF 环境<a class="headerlink" href="#2-esp-idf" title="Permanent link">&para;</a></h2>
+<p>本机已有 VS Code IDF 环境，实际源码版本为 <code>v5.5.4-299-ge46782886f</code>，目标设为 <code>esp32</code>。工程没有换成 Arduino，而是更新原来的 IDF 组件依赖和接口。</p>
+<p>Wi-Fi 事件改用 <code>esp_event</code>，网络接口使用 <code>esp_netif</code>，时间同步使用新版 SNTP，SPI 改为 SPI2。组件的 CMake 依赖也一并整理。</p>
+<p>编译时还处理了重复全局变量定义、绘图尺寸参数遮蔽全局变量的问题。后面保留七列预报，修正了原来的跨午夜休眠秒数计算。</p>
+<h2 id="3-open-meteo">3. 换用 Open-Meteo<a class="headerlink" href="#3-open-meteo" title="Permanent link">&para;</a></h2>
+<p>原工程使用 Dark Sky。这次换成 <a href="https://open-meteo.com/en/docs">Open-Meteo</a>，个人非商业用途不用注册账号，也不需要 API Key。</p>
+<p>地点先设成成都市郫都区郫筒一带，坐标为 30.80993、103.88253，接口时区用 <code>Asia/Shanghai</code>，本地显示时区用 <code>CST-8</code>。</p>
+<p>请求一次获取当前温度、湿度、海平面气压、风速、风向、天气代码和昼夜状态，以及七天最高温、最低温和天气代码。降水提示取当天最大小时降水概率，不把它当成当前降水概率。</p>
+<p>网络顺序改为先 NTP 校时，再发 HTTPS 请求。数据收齐、解析完成后停止 Wi-Fi，随后刷新墨水屏。接口失败就留住旧画面。</p>
+<h2 id="4-vs-code">4. 编译成功，VS Code 仍有头文件红线<a class="headerlink" href="#4-vs-code" title="Permanent link">&para;</a></h2>
+<p>VS Code 显示 <code>build successful</code>，但 <code>esp_wifi.h</code>、<code>driver/gpio.h</code>、<code>math.h</code>、<code>stdint.h</code> 等头文件仍带红线，问题列表中是 <code>C/C++(1696)</code>。</p>
+<p>问题来自 IntelliSense 没有使用当前 ESP32 编译器和编译数据库。编辑器配置改为引用 <code>build/compile_commands.json</code>，并补上工具链路径与生成配置头文件路径，重新加载窗口后再检查。</p>
+<p>构建产物暂时保留，因为编译数据库和 <code>sdkconfig.h</code> 都在 <code>build</code> 中。源码编译通过与编辑器索引正常是两件事。</p>
+<h2 id="5-wi-fi">5. Wi-Fi 与天气请求跑通<a class="headerlink" href="#5-wi-fi" title="Permanent link">&para;</a></h2>
+<p>Wi-Fi 名称和密码从自己已有的 <code>ws2812-8x8-wifi-matrix</code> 工程中取用，放在本地忽略文件里，没有写进公开源码。</p>
+<p>烧录后，串口能看到获得 IP、NTP 校时、证书校验通过和天气返回。这一阶段网络已经工作，但屏幕仍然空白。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>esp-x509-crt-bundle: Certificate validated
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>open_meteo: Received current weather and seven-day forecast for Pidu, Chengdu
 </span></code></pre></div>
-<p>看到这两行后，可以确认 P4 到 C5 的蓝牙 HCI 通道已经启动。</p>
-<h2 id="ble-midi-peripheral">BLE MIDI peripheral 接入<a class="headerlink" href="#ble-midi-peripheral" title="Permanent link">&para;</a></h2>
-<p>最后将 <code>ESP32_Host_MIDI</code> 中现有的 BLE transport 接进工程。这个过程没有额外下载 Arduino BLE 库，因为 Arduino-ESP32 component 中已经带有 BLE 相关实现。</p>
-<p>BLE 源文件在 BT/NimBLE 开启时参与构建，并补上 BT 依赖，避免 BLE 头文件间接包含 NimBLE 头时找不到依赖。同时新增 BLE MIDI 封装层，用于初始化 BLE MIDI peripheral、维护连接状态，并把 BLE MIDI 数据送进统一的 MIDI handler。</p>
-<p>BLE 接完后，USB MIDI 输入也能同时转发到 BLE MIDI，BLE 端发来的 MIDI 也能进入本地显示和音频链路。到这里，USB、显示、音频、WiFi AppleMIDI 和 BLE MIDI 都完成收尾。</p>
+<p>当时屏幕初始化日志里还有一条红色的 <code>EPDIF: All OK</code>。文字虽然写着 All OK，但代码用了错误级别打印，后来改成了正常的信息级别。它只说明 SPI 初始化走到这一处，不能证明屏幕收到了正确指令。</p>
+<h2 id="6-v2">6. 最初按黑白 V2 驱动排查<a class="headerlink" href="#6-v2" title="Permanent link">&para;</a></h2>
+<p>一开始只知道屏幕是 4.2 英寸、板上写着 2.2，随后又按 V2 判断，先尝试了普通黑白 V2 的驱动。</p>
+<p>这时的日志能打印初始化入口，但 BUSY 一直按高电平忙来等待，45 秒后超时：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>epd4in2_v2: hardware reset: BUSY GPIO35 remained HIGH for 45s; check panel, power and wiring
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>weather_to_display_task: e-Paper V2 init failed: ESP_ERR_TIMEOUT
+</span></code></pre></div>
+<p>期间有一次复位阶段能等到 idle，但初始化阶段仍超时。屏幕没有任何图像变化，天气程序随后进入休眠。</p>
+<h2 id="7">7. 单屏诊断与电压测量<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<p>为了把问题范围缩小，程序增加单屏诊断：关闭 Wi-Fi 和天气请求，SPI 降到 100kHz，不让 ESP32 进入深度睡眠，只测试屏幕。</p>
+<p>测试失败后保留 60 秒窗口，RST 持续输出高电平，可以在这个阶段测 VCC、RST 和 BUSY。之前在休眠后测到 BUSY 变成 0V、RST 约 0.6V；这个读数受休眠后的引脚状态影响，不能直接用来判断刷新阶段。</p>
+<p>调试供电用 DAPLink，5V 转 3.3V，屏幕也接 3.3V。曾怀疑供电，但静态读数全是 3.3V，并没有直接指出问题所在。后面继续对照示例和完整屏幕型号。</p>
+<h2 id="8-g">8. 确认屏幕是带 G 的型号<a class="headerlink" href="#8-g" title="Permanent link">&para;</a></h2>
+<p>最后确认完整名称为 <strong>4.2inch e-Paper Module (G)</strong>。它不是普通黑白 V2，而是黑、白、黄、红四色屏。</p>
+<p>重新对照 <a href="https://github.com/waveshareteam/e-Paper/blob/master/E-paper_Separate_Program/4in2_e-Paper_G/ESP32/EPD_4in2g.cpp">Waveshare 官方 G 型 ESP32 示例</a>，初始化命令、复位时序、BUSY 极性和像素格式都要跟着换。</p>
+<p>G 型实际调用的 BUSY 等待函数是低电平忙、高电平就绪；普通黑白 V2 驱动当时按相反极性等待。图像也从 1 位黑白变成 2 位四色，四个像素占一个字节，整帧 30000 字节。</p>
+<p>G 型诊断图显示后，屏幕内容正常，看到黑、白、黄、红色带。此时保留已成功显示的 100kHz SPI，再切回天气程序。</p>
+<h2 id="9">9. 观察刷新耗时<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<p>屏幕显示正常后，肉眼观察刷新大约要几秒。为了分清是发送数据慢还是屏幕本身刷新慢，日志分成两个阶段：<code>Image transfer</code> 记录 30000 字节 SPI 发送耗时，<code>full refresh</code> 记录 BUSY 等待时间。</p>
+<p>没有仅凭刷新速度继续改时序，先保持诊断时的 G 型初始化和全刷新流程。墨水屏没有背光，正常刷新也会出现画面转换。</p>
+<h2 id="10">10. 改成中文四色天气界面<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
+<p>G 型四色已经能显示，继续沿用黑白界面比较浪费。天气绘图改为直接生成四色缓冲区，不再先画黑白再转换。</p>
+<p>地点改成“成都市郫都区”，天气、星期、风向和标签改成中文。太阳、月亮用黄色，预报最高温用红色，最低温与正文用黑色。今日最高降水概率达到 50% 时用红色提示栏，其余使用黄色。</p>
+<p>中文字体从 Noto Sans SC 生成字符子集，只收录界面、天气翻译和地点用到的字符。普通正文与日期使用小字号，当前温度单独保留大号数字。</p>
+<p><img alt="中文四色天气界面像素预览" src="../../img/weather/weather-ui-preview.png" width="600" /></p>
+<p>这张图是相同绘图代码生成的示例预览。主机端还检查了夜间、降水概率缺失、长地点名和极端负温的排版，以及天气代码的中文映射。</p>
+<h2 id="11">11. 本阶段结果<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<p>截至 2026-10-05，G 型四色诊断图已实机显示，Wi-Fi、校时和天气请求已有串口记录。中文四色天气版本完成编译，固件大小 <code>0x106280</code> 字节，1.5MiB 应用分区还剩 32%。</p>
+<p>中文天气界面的实机效果待烧录确认；RJ45 没有接入程序，OTA 尚未实机验证。</p>
 
 
 
@@ -1088,12 +1198,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
