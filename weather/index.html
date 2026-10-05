@@ -869,8 +869,8 @@
 <td>400 × 300，黑白黄红四色，SPI 接口</td>
 </tr>
 <tr>
-<td>DAPLink / USB 转串口</td>
-<td>通过 UART0 烧录和查看日志，逻辑电平为 3.3V</td>
+<td>USB 转 TTL</td>
+<td>通过 UART0 烧录和查看日志，使用 3.3V 逻辑电平</td>
 </tr>
 <tr>
 <td>电源</td>
@@ -936,8 +936,8 @@
 <p>当前采用 <a href="https://github.com/waveshareteam/e-Paper/blob/master/E-paper_Separate_Program/4in2_e-Paper_G/ESP32/EPD_4in2g.cpp">Waveshare G 型 ESP32 示例</a> 的初始化与刷新流程。BUSY 低电平忙、高电平就绪；像素采用 2 位编码，整帧 30000 字节。</p>
 <p>组件目录仍叫 <code>epd4in2b</code>，实际编译的驱动是 <code>epd4in2g.c</code>。SPI 保持诊断时已成功显示的 100kHz。</p>
 <h2 id="_3">中文四色界面<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p><img alt="中文四色天气界面示例" src="../img/weather/weather-ui-preview.png" width="600" /></p>
-<p>这是绘图代码生成的像素预览，使用示例数据，不是实机照片。界面显示中文地点、天气、星期和风向；黄色用于太阳和月亮，红色用于最高温，降水概率达到 50% 时提示栏变红。</p>
+<p><img alt="中文四色天气界面" src="../img/weather/weather-ui-preview.png" width="600" /></p>
+<p>界面显示中文地点、天气、星期和风向。黄色用于太阳和月亮，红色用于最高温，降水概率达到 50% 时提示栏变红。</p>
 <h2 id="_4">当前确认的结果<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -969,11 +969,15 @@
 </tr>
 <tr>
 <td>中文四色天气界面</td>
-<td>已编译、已生成像素预览，实机效果待烧录确认</td>
+<td>实机显示正常，天气、日期、温度和图标均正常</td>
 </tr>
 <tr>
-<td>RJ45 与 OTA</td>
-<td>有线网络未接入，OTA 未实机验证</td>
+<td>定时更新与深度睡眠</td>
+<td>实机运行正常</td>
+</tr>
+<tr>
+<td>联网方式</td>
+<td>使用 Wi-Fi</td>
 </tr>
 </tbody>
 </table>

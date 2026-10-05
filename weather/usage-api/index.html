@@ -782,7 +782,18 @@
   <a href="#7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. 单屏诊断
+        7. 手动刷新
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 单屏诊断
       
     </span>
   </a>
@@ -1002,7 +1013,18 @@
   <a href="#7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. 单屏诊断
+        7. 手动刷新
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 单屏诊断
       
     </span>
   </a>
@@ -1149,8 +1171,8 @@
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">idf</span><span class="p">.</span><span class="n">py</span> <span class="n">-p</span> <span class="n">COMx</span> <span class="n">flash</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">idf</span><span class="p">.</span><span class="n">py</span> <span class="n">-p</span> <span class="n">COMx</span> <span class="n">monitor</span>
 </span></code></pre></div>
-<p><code>COMx</code> 换成当前串口。烧录走 UART0，TX/RX 交叉连接并共地，串口电平为 3.3V。没有自动下载电路时，将 IO0 接地后复位进入下载模式，写完后断开 IO0 与 GND 并复位。</p>
-<p>工程使用 4MB Flash 分区表，两个 OTA 应用分区各 1.5MiB。首次使用或调整分区时完整烧录，不能只用旧分区 OTA 写应用。</p>
+<p><code>COMx</code> 换成当前串口。使用 USB 转 TTL，通过 UART0 烧录，TX/RX 交叉连接并共地，逻辑电平为 3.3V。没有自动下载电路时，将 IO0 接地后复位进入下载模式，写完后断开 IO0 与 GND 并复位。</p>
+<p>工程使用 4MB Flash 分区表。首次使用或调整分区时，用 <code>idf.py flash</code> 完整写入 bootloader、分区表和应用。</p>
 <h2 id="6">6. 正常更新过程<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Wi-Fi 获取 IP
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    -&gt; NTP 校时
@@ -1162,7 +1184,10 @@
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    -&gt; ESP32 深度睡眠
 </span></code></pre></div>
 <p>默认北京时间 07:00–22:50 每十分钟更新，夜间等到次日 07:00。Wi-Fi 连接失败后约三小时重试。天气请求失败时保留上次画面。</p>
-<h2 id="7">7. 单屏诊断<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<h2 id="7">7. 手动刷新<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<p>使用一个常开、自复位的轻触按键，一端接 WT32-ETH01 的 <strong>EN</strong>，另一端接 <strong>GND</strong>。按下再松开，ESP32 复位并重新联网更新天气，深度睡眠期间也可以这样操作。</p>
+<p>当前程序每次启动都会请求天气，因此不需要另写按键检测。IO0 是下载模式引脚，不用作刷新按键。</p>
+<h2 id="8">8. 单屏诊断<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
 <p>在 <code>WT32-ETH01 Configuration</code> 中启用 <code>Screen-only diagnostic (no Wi-Fi, SPI 100 kHz)</code>，重新编译烧录。此模式只显示测试文字和四色色带，ESP32 保持唤醒，方便测量。</p>
 <p>诊断失败后有 60 秒测量窗口，窗口结束时 RST 会被主动拉低。测试完成后关闭诊断模式、重新编译烧录，才能恢复天气功能。</p>
 

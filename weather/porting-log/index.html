@@ -781,7 +781,7 @@
   <a href="#11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        11. 本阶段结果
+        11. 实机运行
       
     </span>
   </a>
@@ -1056,7 +1056,7 @@
   <a href="#11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        11. 本阶段结果
+        11. 实机运行
       
     </span>
   </a>
@@ -1088,7 +1088,6 @@
 <h2 id="1">1. 下载原工程与调整引脚<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>先把 <a href="https://github.com/henri98/esp32-e-paper-weatherdisplay">原工程</a> 下载到 <code>D:\ESP_PROJECT\esp32-e-paper-weatherdisplay</code>。联网方式继续使用 Wi-Fi，没有启用 WT32-ETH01 的 RJ45。</p>
 <p>原引脚不能直接照搬到这块板上，屏幕改接 MOSI=14、CLK=17、CS=4、DC=33、RST=32、BUSY=35。这里最容易认错的是 GPIO17：板上扩展接口也写 TXD，但它是 TX2，不是烧录 UART0。</p>
-<p>原工程的 OTA 按键也占 GPIO4，与新的屏幕 CS 冲突。按键改到只作输入的 GPIO39，外接 10kΩ 上拉，默认不启用。</p>
 <h2 id="2-esp-idf">2. 接入当前 ESP-IDF 环境<a class="headerlink" href="#2-esp-idf" title="Permanent link">&para;</a></h2>
 <p>本机已有 VS Code IDF 环境，实际源码版本为 <code>v5.5.4-299-ge46782886f</code>，目标设为 <code>esp32</code>。工程没有换成 Arduino，而是更新原来的 IDF 组件依赖和接口。</p>
 <p>Wi-Fi 事件改用 <code>esp_event</code>，网络接口使用 <code>esp_netif</code>，时间同步使用新版 SNTP，SPI 改为 SPI2。组件的 CMake 依赖也一并整理。</p>
@@ -1119,7 +1118,7 @@
 <h2 id="7">7. 单屏诊断与电压测量<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <p>为了把问题范围缩小，程序增加单屏诊断：关闭 Wi-Fi 和天气请求，SPI 降到 100kHz，不让 ESP32 进入深度睡眠，只测试屏幕。</p>
 <p>测试失败后保留 60 秒窗口，RST 持续输出高电平，可以在这个阶段测 VCC、RST 和 BUSY。之前在休眠后测到 BUSY 变成 0V、RST 约 0.6V；这个读数受休眠后的引脚状态影响，不能直接用来判断刷新阶段。</p>
-<p>调试供电用 DAPLink，5V 转 3.3V，屏幕也接 3.3V。曾怀疑供电，但静态读数全是 3.3V，并没有直接指出问题所在。后面继续对照示例和完整屏幕型号。</p>
+<p>烧录和串口日志使用 USB 转 TTL，供电为 5V 转 3.3V，屏幕也接 3.3V。曾怀疑供电，但静态读数全是 3.3V，并没有直接指出问题所在。后面继续对照示例和完整屏幕型号。</p>
 <h2 id="8-g">8. 确认屏幕是带 G 的型号<a class="headerlink" href="#8-g" title="Permanent link">&para;</a></h2>
 <p>最后确认完整名称为 <strong>4.2inch e-Paper Module (G)</strong>。它不是普通黑白 V2，而是黑、白、黄、红四色屏。</p>
 <p>重新对照 <a href="https://github.com/waveshareteam/e-Paper/blob/master/E-paper_Separate_Program/4in2_e-Paper_G/ESP32/EPD_4in2g.cpp">Waveshare 官方 G 型 ESP32 示例</a>，初始化命令、复位时序、BUSY 极性和像素格式都要跟着换。</p>
@@ -1132,11 +1131,11 @@
 <p>G 型四色已经能显示，继续沿用黑白界面比较浪费。天气绘图改为直接生成四色缓冲区，不再先画黑白再转换。</p>
 <p>地点改成“成都市郫都区”，天气、星期、风向和标签改成中文。太阳、月亮用黄色，预报最高温用红色，最低温与正文用黑色。今日最高降水概率达到 50% 时用红色提示栏，其余使用黄色。</p>
 <p>中文字体从 Noto Sans SC 生成字符子集，只收录界面、天气翻译和地点用到的字符。普通正文与日期使用小字号，当前温度单独保留大号数字。</p>
-<p><img alt="中文四色天气界面像素预览" src="../../img/weather/weather-ui-preview.png" width="600" /></p>
-<p>这张图是相同绘图代码生成的示例预览。主机端还检查了夜间、降水概率缺失、长地点名和极端负温的排版，以及天气代码的中文映射。</p>
-<h2 id="11">11. 本阶段结果<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
-<p>截至 2026-10-05，G 型四色诊断图已实机显示，Wi-Fi、校时和天气请求已有串口记录。中文四色天气版本完成编译，固件大小 <code>0x106280</code> 字节，1.5MiB 应用分区还剩 32%。</p>
-<p>中文天气界面的实机效果待烧录确认；RJ45 没有接入程序，OTA 尚未实机验证。</p>
+<p><img alt="中文四色天气界面" src="../../img/weather/weather-ui-preview.png" width="600" /></p>
+<p>重新烧录后，中文地点、天气说明、日期、温度和图标都能正常显示，红色与黄色也能正常刷新。</p>
+<h2 id="11">11. 实机运行<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<p>最终，WT32-ETH01 能连接 Wi-Fi，完成 NTP 校时，从 Open-Meteo 获取郫都区天气，并把当前天气与七天预报显示在 G 型四色屏上。刷新结束后进入深度睡眠，按照设定时间继续更新。</p>
+<p>联网、中文显示、四色图标和定时休眠都已经在实物上跑通。烧录使用 USB 转 TTL，运行时使用 Wi-Fi。</p>
 
 
 
